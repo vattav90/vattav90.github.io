@@ -83,6 +83,7 @@ document.getElementById("Allow").onclick = function() {myFunction()};
 
 function myFunction() {
 Moengage.add_unique_user_id(document.getElementById('ID').value);
+console.log(document.getElementById('ID').value);
 
     if( document.getElementById('Laptop').checked) {
         Moengage.add_user_attribute("Laptop Subscription", document.getElementById('Laptop').value);
