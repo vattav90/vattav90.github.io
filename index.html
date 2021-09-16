@@ -25,6 +25,8 @@
 <div class="moe-text-wrapper-safari">
 <span class="moe-notification-title-safari">The website "Your Website" would like to send you awesome offers!</span>
 <p class="moe-notification-message-safari">Notifications can be turned off anytime from browser settings.</p>
+<input type="text" id="ID" name="ID" value="ID">
+<label for="ID"> ID</label><br>	
 <input type="checkbox" id="Laptop" name="Laptop" value="Laptop">
 <label for="Laptop"> Laptop</label><br>
 <input type="checkbox" id="PC" name="PC" value="PC">
@@ -78,12 +80,16 @@
 <script>
 	
 document.getElementById('Allow').onclick = function() {
-    if (document.getElementById('Laptop').checked) {
-        alert(document.getElementById('Laptop').value);
+	document.getElementById('ID').checked) {
+	Moengage.add_unique_user_id(document.getElementById('ID').value);
     }
-    else if (document.getElementById('PC').checked) {
-        alert(document.getElementById('PC').value);
+    document.getElementById('Laptop').checked) {
+        Moengage.add_user_attribute("Laptop Subscription", document.getElementById('Laptop').value);
     }
+    document.getElementById('PC').checked) {
+        Moengage.add_user_attribute("PC Subscription", document.getElementById('PC').value);
+    }
+	
 }
 	
 	</script>	
