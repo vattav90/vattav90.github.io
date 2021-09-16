@@ -10,10 +10,32 @@
     app_id:"DNBVW45PTD67QO7I1Q7ORLZD",
     debug_logs: 0
   });
+	Moengage.call_web_push({
+            "soft_ask":true,
+            "main_class":"moe-main-class",
+            "allow_class":"moe-allow-class",
+            "block_class":"moe-block-class",
+          });
 </script>
 </head>
 <body>
+<div class="moe-main-class" style="display:none;">
+<div class="moe-chrome-style-notification moe-chrome-style-notification-safari" data-rapid_height="50"><div class="moe-safari-notification-inner-wrapper"><div class="moe-notification-image-wrapper-safari">
+<img src="https://www.moengage.com/img/icon-web-push.png"></div>
+<div class="moe-text-wrapper-safari">
+<span class="moe-notification-title-safari">The website "Your Website" would like to send you awesome offers!</span>
+<p class="moe-notification-message-safari">Notifications can be turned off anytime from browser settings.</p></div>
+<div style="clear: both;">
+<div class="moe-modal-branding"><span><a href="https://moengage.com" target="_blank">Powered by </a></span><a href="https://moengage.com" target="_blank" style="text-decoration: none;"><img src="https://cdn.moengage.com/images/logo-dark.png"></a> </div>
+<div class="moe-button-wrapper">
+<button class="moe-chrome-style-notification-btn moe-btn-close moe-block-class">Don't Allow</button>
+<button class="moe-chrome-style-notification-btn moe-btn-allow moe-allow-class">Allow</button>
+</div><div style="clear:both"></div></div>
+</div></div></div>
 
+
+<!-- Styles for the Custom Soft Ask created above -->
+<style>.moe-modal-branding img {vertical-align: bottom!important;width: 63px!important;height: 30px!important;padding-right: 2px!important;display: inline-block!important;margin-bottom:-9px;margin-left:-5px;}.moe-modal-branding span a {text-decoration: none!important;color: #000!important;font-size: 10px!important;line-height: 1.2em!important;font-weight: 400!important;}.moe-modal-branding {float:left;font-size: 10px;margin-top: -2px;font-family: Arial!important;line-height: 1.2em!important;}.moe-chrome-style-notification-safari{width:422px;top:1px;left:calc(50% - 211px);background-color:#FFFFFF;margin:0;padding:0}.moe-chrome-style-notification{box-shadow:0 0 4px #888;font-size:11px;font-weight:400;position:fixed;z-index:2147483647}.moe-safari-notification-inner-wrapper{margin:0;padding:0 20px 10px}.moe-notification-image-wrapper-safari{float:left;position:relative;margin:15px 15px 0 0!important;padding:0!important;display:inline-block}.moe-chrome-style-notification-safari *{word-spacing:normal!important;letter-spacing:normal!important;font-family:"Open Sans",sans-serif!important}.moe-text-wrapper-safari{position:relative!important;padding:10px 0 0!important;color:#000!important;text-align:left!important;margin:0!important;line-height:1.4em!important;display:inline-block!important;width:calc(100% - 80px)!important}.moe-notification-title-safari{margin-bottom:5px;text-align:left;font-size:14px;font-weight:700;line-height:1.4em;color:#000;font-family:"Open Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-height:1.4em!important;margin:10px 0!important;padding:0!important;text-align:left!important;font-family:"Open Sans",sans-serif!important}.moe-chrome-style-notification .moe-button-wrapper{float:right!important;margin:0!important;padding:0!important}.moe-chrome-style-notification-safari .moe-chrome-style-notification-btn.moe-btn-close{background:#FFF!important;color:#000!important;border-color:#CCC!important;margin-right:20px!important;width:100px!important}.moe-chrome-style-notification-safari .moe-chrome-style-notification-btn{width:90px!important;height:26px!important;font-size:14px!important;cursor:pointer!important;line-height:1.1em!important;border-radius:4px!important;color:#fff!important;background: linear-gradient(to bottom,#23bd9f,#12ac8e)!important;border: 1px solid #12ac8e!important;display:inline-block!important;font-weight:400!important;margin:0!important;padding:5px!important;text-transform:none!important;box-sizing:border-box!important;font-family:Arial!important;text-shadow:none!important;box-shadow:none!important;white-space:nowrap!important}.moe-notification-image-wrapper-safari img{height:65px!important;width:65px!important}</style>
 	<div id="container">
 		<div id="header">
 			<h1>Simple HTML Template</h1>
