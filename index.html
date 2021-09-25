@@ -1,122 +1,299 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Home | Simple HTML Template</title>
-	<link rel="stylesheet" href="style.css">
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m,n){i.moengage_object=r;t={};q=function(f){return function(){(i.moengage_q=i.moengage_q||[]).push({f:f,a:arguments})}};f=['track_event','add_user_attribute','add_first_name','add_last_name','add_email','add_mobile','add_user_name','add_gender','add_birthday','destroy_session','add_unique_user_id','moe_events','call_web_push','track','location_type_attribute'],h={onsite:["getData","registerCallback"]};for(k in f){t[f[k]]=q(f[k])}for(k in h)for(l in h[k]){null==t[k]&&(t[k]={}),t[k][h[k][l]]=q(k+"."+h[k][l])}a=s.createElement(o);m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);i.moe=i.moe||function(){n=arguments[0];return t};a.onload=function(){if(n){i[r]=moe(n)}}})(window,document,'script','https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js','Moengage')
+    <title>Home | Simple HTML Template</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m, n) {
+            i.moengage_object = r;
+            t = {};
+            q = function(f) {
+                return function() {
+                    (i.moengage_q = i.moengage_q || []).push({
+                        f: f,
+                        a: arguments
+                    })
+                }
+            };
+            f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track', 'location_type_attribute'], h = {
+                onsite: ["getData", "registerCallback"]
+            };
+            for (k in f) {
+                t[f[k]] = q(f[k])
+            }
+            for (k in h)
+                for (l in h[k]) {
+                    null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
+                }
+            a = s.createElement(o);
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+            i.moe = i.moe || function() {
+                n = arguments[0];
+                return t
+            };
+            a.onload = function() {
+                if (n) {
+                    i[r] = moe(n)
+                }
+            }
+        })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
 
-  Moengage = moe({
-    app_id:"DNBVW45PTD67QO7I1Q7ORLZD",
-    debug_logs: 0
-  });
-	Moengage.call_web_push({
-            "soft_ask":true,
-            "main_class":"moe-main-class",
-            "allow_class":"moe-allow-class",
-            "block_class":"moe-block-class",
-          });
-	Moengage.onsite.registerCallback("TestA", function (err, data) {
-  if (err) {
-    // Handle error case here
-    // We could get error for various reasons, like
-    // network issues, campaigns not present for a particular tag
-    return console.error('Error from moengage:', err);
-  }
-  console.log('Data for campaign:', data);
-  
-  var payload = data.payload; // Campaign payload defined during campaign creation
-  
-  var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you've successfully rendered the HTML as per the payload provided.
-  
- var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+        Moengage = moe({
+            app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
+            debug_logs: 0
+        });
+        Moengage.call_web_push({
+            "soft_ask": true,
+            "main_class": "moe-main-class",
+            "allow_class": "moe-allow-class",
+            "block_class": "moe-block-class",
+        });
+        Moengage.onsite.registerCallback("TestA", function(err, data) {
+            if (err) {
+                // Handle error case here
+                // We could get error for various reasons, like
+                // network issues, campaigns not present for a particular tag
+                return console.error('Error from moengage:', err);
+            }
+            console.log('Data for campaign:', data);
 
-});
-</script>
+            var payload = data.payload; // Campaign payload defined during campaign creation
+
+            var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you've successfully rendered the HTML as per the payload provided.
+
+            var clickTracker = data.click({
+                widget_id: "sample_widget_id"
+            }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+
+        });
+        function addData(){
+var imgtitle = document.getElementById("WebPData");
+        WebPData.innerHTML = data.payload};
+    </script>
 </head>
+
 <body>
-<div class="moe-main-class" style="display:none;">
-<div class="moe-chrome-style-notification moe-chrome-style-notification-safari" data-rapid_height="50"><div class="moe-safari-notification-inner-wrapper"><div class="moe-notification-image-wrapper-safari">
-<img src="https://www.moengage.com/img/icon-web-push.png"></div>
-<div class="moe-text-wrapper-safari">
-<span class="moe-notification-title-safari">The website "Your Website" would like to send you awesome offers!</span>
-<p class="moe-notification-message-safari">Notifications can be turned off anytime from browser settings.</p>
-<input type="text" id="ID" name="ID" value="ID">
-<label for="ID"> ID</label><br>	
-<input type="checkbox" id="Laptop" name="Laptop" value="Laptop">
-<label for="Laptop"> Laptop</label><br>
-<input type="checkbox" id="PC" name="PC" value="PC">
-<label for="PC"> PC</label><br>
-</div>
-<div style="clear: both;">
-<div class="moe-modal-branding"><span><a href="https://moengage.com" target="_blank">Powered by </a></span><a href="https://moengage.com" target="_blank" style="text-decoration: none;"><img src="https://cdn.moengage.com/images/logo-dark.png"></a> </div>
-<div class="moe-button-wrapper">
-<button class="moe-chrome-style-notification-btn moe-btn-close moe-block-class">Don't Allow</button>
-<div id = "Allow"><button class="moe-chrome-style-notification-btn moe-btn-allow moe-allow-class">Allow</button></div>
-</div><div style="clear:both"></div></div>
-</div></div></div>
+    <div class="moe-main-class" style="display:none;">
+        <div class="moe-chrome-style-notification moe-chrome-style-notification-safari" data-rapid_height="50">
+            <div class="moe-safari-notification-inner-wrapper">
+                <div class="moe-notification-image-wrapper-safari">
+                    <img src="https://www.moengage.com/img/icon-web-push.png">
+                </div>
+                <div class="moe-text-wrapper-safari">
+                    <span class="moe-notification-title-safari">The website "Your Website" would like to send you awesome offers!</span>
+                    <p class="moe-notification-message-safari">Notifications can be turned off anytime from browser settings.</p>
+                    <input type="text" id="ID" name="ID" value="ID">
+                    <label for="ID"> ID</label><br>
+                    <input type="checkbox" id="Laptop" name="Laptop" value="Laptop">
+                    <label for="Laptop"> Laptop</label><br>
+                    <input type="checkbox" id="PC" name="PC" value="PC">
+                    <label for="PC"> PC</label><br>
+                </div>
+                <div style="clear: both;">
+                    <div class="moe-modal-branding"><span><a href="https://moengage.com" target="_blank">Powered by </a></span><a href="https://moengage.com" target="_blank" style="text-decoration: none;"><img src="https://cdn.moengage.com/images/logo-dark.png"></a> </div>
+                    <div class="moe-button-wrapper">
+                        <button class="moe-chrome-style-notification-btn moe-btn-close moe-block-class">Don't Allow</button>
+                        <div id="Allow"><button class="moe-chrome-style-notification-btn moe-btn-allow moe-allow-class">Allow</button></div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<!-- Styles for the Custom Soft Ask created above -->
-<style>.moe-modal-branding img {vertical-align: bottom!important;width: 63px!important;height: 30px!important;padding-right: 2px!important;display: inline-block!important;margin-bottom:-9px;margin-left:-5px;}.moe-modal-branding span a {text-decoration: none!important;color: #000!important;font-size: 10px!important;line-height: 1.2em!important;font-weight: 400!important;}.moe-modal-branding {float:left;font-size: 10px;margin-top: -2px;font-family: Arial!important;line-height: 1.2em!important;}.moe-chrome-style-notification-safari{width:422px;top:1px;left:calc(50% - 211px);background-color:#FFFFFF;margin:0;padding:0}.moe-chrome-style-notification{box-shadow:0 0 4px #888;font-size:11px;font-weight:400;position:fixed;z-index:2147483647}.moe-safari-notification-inner-wrapper{margin:0;padding:0 20px 10px}.moe-notification-image-wrapper-safari{float:left;position:relative;margin:15px 15px 0 0!important;padding:0!important;display:inline-block}.moe-chrome-style-notification-safari *{word-spacing:normal!important;letter-spacing:normal!important;font-family:"Open Sans",sans-serif!important}.moe-text-wrapper-safari{position:relative!important;padding:10px 0 0!important;color:#000!important;text-align:left!important;margin:0!important;line-height:1.4em!important;display:inline-block!important;width:calc(100% - 80px)!important}.moe-notification-title-safari{margin-bottom:5px;text-align:left;font-size:14px;font-weight:700;line-height:1.4em;color:#000;font-family:"Open Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-height:1.4em!important;margin:10px 0!important;padding:0!important;text-align:left!important;font-family:"Open Sans",sans-serif!important}.moe-chrome-style-notification .moe-button-wrapper{float:right!important;margin:0!important;padding:0!important}.moe-chrome-style-notification-safari .moe-chrome-style-notification-btn.moe-btn-close{background:#FFF!important;color:#000!important;border-color:#CCC!important;margin-right:20px!important;width:100px!important}.moe-chrome-style-notification-safari .moe-chrome-style-notification-btn{width:90px!important;height:26px!important;font-size:14px!important;cursor:pointer!important;line-height:1.1em!important;border-radius:4px!important;color:#fff!important;background: linear-gradient(to bottom,#23bd9f,#12ac8e)!important;border: 1px solid #12ac8e!important;display:inline-block!important;font-weight:400!important;margin:0!important;padding:5px!important;text-transform:none!important;box-sizing:border-box!important;font-family:Arial!important;text-shadow:none!important;box-shadow:none!important;white-space:nowrap!important}.moe-notification-image-wrapper-safari img{height:65px!important;width:65px!important}</style>
-	<div id="container">
-		<div id="header">
-			<h1>Simple HTML Template</h1>
-		</div>
+    <!-- Styles for the Custom Soft Ask created above -->
+    <style>
+        .moe-modal-branding img {
+            vertical-align: bottom !important;
+            width: 63px !important;
+            height: 30px !important;
+            padding-right: 2px !important;
+            display: inline-block !important;
+            margin-bottom: -9px;
+            margin-left: -5px;
+        }
 
-		<div id="nav">
-			<ul>
-				<li><a class="active" href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="services.html">Services</a></li>
-			</ul>
-		</div>
+        .moe-modal-branding span a {
+            text-decoration: none !important;
+            color: #000 !important;
+            font-size: 10px !important;
+            line-height: 1.2em !important;
+            font-weight: 400 !important;
+        }
 
-		<div id = "main">
-			<h1>Welcome</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
+        .moe-modal-branding {
+            float: left;
+            font-size: 10px;
+            margin-top: -2px;
+            font-family: Arial !important;
+            line-height: 1.2em !important;
+        }
 
-		<div id="sidebar">
-			<h3>Sidebar</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
+        .moe-chrome-style-notification-safari {
+            width: 422px;
+            top: 1px;
+            left: calc(50% - 211px);
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0
+        }
 
-		<div class="clr"></div>
+        .moe-chrome-style-notification {
+            box-shadow: 0 0 4px #888;
+            font-size: 11px;
+            font-weight: 400;
+            position: fixed;
+            z-index: 2147483647
+        }
 
-		<div id="footer">
-			<p>Copyright &copy; 2020</p>
-			
-		</div>
+        .moe-safari-notification-inner-wrapper {
+            margin: 0;
+            padding: 0 20px 10px
+        }
 
-	</div>
+        .moe-notification-image-wrapper-safari {
+            float: left;
+            position: relative;
+            margin: 15px 15px 0 0 !important;
+            padding: 0 !important;
+            display: inline-block
+        }
 
-<script>
+        .moe-chrome-style-notification-safari * {
+            word-spacing: normal !important;
+            letter-spacing: normal !important;
+            font-family: "Open Sans", sans-serif !important
+        }
 
-document.getElementById("Allow").onclick = function() {myFunction()};    
+        .moe-text-wrapper-safari {
+            position: relative !important;
+            padding: 10px 0 0 !important;
+            color: #000 !important;
+            text-align: left !important;
+            margin: 0 !important;
+            line-height: 1.4em !important;
+            display: inline-block !important;
+            width: calc(100% - 80px) !important
+        }
 
-function myFunction() {
-Moengage.add_unique_user_id(document.getElementById('ID').value);
-console.log(document.getElementById('ID').value);
+        .moe-notification-title-safari {
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.4em;
+            color: #000;
+            font-family: "Open Sans", sans-serif
+        }
 
-    if( document.getElementById('Laptop').checked) {
-        Moengage.add_user_attribute("Laptop Subscription", document.getElementById('Laptop').value);
-    }
-   else if( document.getElementById('PC').checked) {
-        Moengage.add_user_attribute("PC Subscription", document.getElementById('PC').value);
-    }
+        .moe-notification-message-safari {
+            font-size: 12px !important;
+            line-height: 1.4em !important;
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            text-align: left !important;
+            font-family: "Open Sans", sans-serif !important
+        }
 
-}   
+        .moe-chrome-style-notification .moe-button-wrapper {
+            float: right !important;
+            margin: 0 !important;
+            padding: 0 !important
+        }
 
-</script>	
-	
+        .moe-chrome-style-notification-safari .moe-chrome-style-notification-btn.moe-btn-close {
+            background: #FFF !important;
+            color: #000 !important;
+            border-color: #CCC !important;
+            margin-right: 20px !important;
+            width: 100px !important
+        }
+
+        .moe-chrome-style-notification-safari .moe-chrome-style-notification-btn {
+            width: 90px !important;
+            height: 26px !important;
+            font-size: 14px !important;
+            cursor: pointer !important;
+            line-height: 1.1em !important;
+            border-radius: 4px !important;
+            color: #fff !important;
+            background: linear-gradient(to bottom, #23bd9f, #12ac8e) !important;
+            border: 1px solid #12ac8e !important;
+            display: inline-block !important;
+            font-weight: 400 !important;
+            margin: 0 !important;
+            padding: 5px !important;
+            text-transform: none !important;
+            box-sizing: border-box !important;
+            font-family: Arial !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            white-space: nowrap !important
+        }
+
+        .moe-notification-image-wrapper-safari img {
+            height: 65px !important;
+            width: 65px !important
+        }
+    </style>
+    <div id="container">
+        <div id="WebPData"></div>
+        <div id="header">
+            <h1>Simple HTML Template</h1>
+        </div>
+
+        <div id="nav">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div id="sidebar">
+            <h3>Sidebar</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="clr"></div>
+
+        <div id="footer">
+            <p>Copyright &copy; 2020</p>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("Allow").onclick = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            Moengage.add_unique_user_id(document.getElementById('ID').value);
+            console.log(document.getElementById('ID').value);
+
+            if (document.getElementById('Laptop').checked) {
+                Moengage.add_user_attribute("Laptop Subscription", document.getElementById('Laptop').value);
+            } else if (document.getElementById('PC').checked) {
+                Moengage.add_user_attribute("PC Subscription", document.getElementById('PC').value);
+            }
+
+        }
+    </script>
+
 </body>
+
 </html>
-
-
-
-
-
-
