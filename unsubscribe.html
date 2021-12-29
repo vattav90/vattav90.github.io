@@ -44,7 +44,8 @@
 
         Moengage = moe({
             app_id: "Y03N5SVIVAU7KQ29BEIKUGJA",
-            debug_logs: 0
+            debug_logs: 1,
+            cluster: "DC_3"
         });
 
     </script>
@@ -52,12 +53,14 @@
 </head>
 
 <body>
+    <div id="container">
 <p>Please select a reason to Unsubscribe</p>
                     <input type="checkbox" id="1" name="1" value="Mails not relevant">
                     <label for="1"> Mails not Relevant</label><br>
                     <input type="checkbox" id="2" name="2" value="I did not subscribe">
                     <label for="2"> I did not subscribe</label>
                     <input type = submit id="Allow">
+    </div>
     <script>
         var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
