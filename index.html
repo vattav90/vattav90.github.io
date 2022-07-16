@@ -46,13 +46,8 @@
             app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
             debug_logs: 0
         });
-        Moengage.call_web_push({
-            "soft_ask": true,
-            "main_class": "moe-main-class",
-            "allow_class": "moe-allow-class",
-            "block_class": "moe-block-class",
-        });
-        Moengage.onsite.registerCallback("TestA", function(err, data) {
+
+        Moengage.onsite.registerCallback(tagName, function(err, data) {
             if (err) {
                 // Handle error case here
                 // We could get error for various reasons, like
@@ -60,8 +55,6 @@
                 return console.error('Error from moengage:', err);
             }
             console.log('Data for campaign:', data);
-            const wpd = JSON.stringify(data);
-            console.log(wpd);
 
             var payload = data.payload; // Campaign payload defined during campaign creation
 
@@ -73,8 +66,12 @@
 
         });
         
-
-       document.getElementById("WebPData").innerHTML = wpd;</script>
+        Moengage.call_web_push({
+            "soft_ask": true,
+            "main_class": "moe-main-class",
+            "allow_class": "moe-allow-class",
+            "block_class": "moe-block-class",
+        });</script>
 </head>
 
 <body>
