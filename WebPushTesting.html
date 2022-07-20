@@ -52,13 +52,13 @@ arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z)
     <div id="container">
         <form>
             <label for="fname" id="email1" class="email">Email ID:</label>
-            <input type="email" id="email" class="email" name="email">
+            <input type="email" id="email" class="email" name="email" required>
            <div id="sub"><p>Did you subscribe to Web Push?</p></div>
            <div id="sub">  <label for="yes" >Yes:</label>
-                <input type="radio" id="suby" class="subscribe" name="subscribe">
+                <input type="radio" id="suby" class="subscribe" name="subscribe" required>
             
              <label for="no" >No:</label>
-                <input type="radio" id="subn" class="subscribe" name="subscribe">
+                <input type="radio" id="subn" class="subscribe" name="subscribe" required>
             </div>
             <div id="submit"><input type="submit" value="Submit" ></div>
 
@@ -69,7 +69,7 @@ arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z)
             e.preventDefault();
         if(document.getElementById('suby').checked == true) {   
          webengage.user.setAttribute("Subscription", "Yes")
-                    console.log("This is No!")};   
+                    console.log("This is Yes!")};   
 
          if(document.getElementById('subn').checked == true){
            webengage.user.setAttribute("Subscription", "No")
@@ -77,6 +77,7 @@ arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z)
             };
             webengage.user.login(document.getElementById("email").value);
             console.log(document.getElementById("email").value);
+            document.getElementByID("container").innerHTML = ("Thank you!")
         };
 
     </script>
