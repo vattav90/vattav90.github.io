@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Push Migration Simulation</title>
+    <style>
+        #container {
+            display: flex;
+            border: 1px solid black;
+            padding: 10px;
+            justify-content: center;
+            max-width: 400px;
+            max-height: 400px;
+            margin: auto;
+            align-items: center;
+        }
+
+        #email {
+            width: 100%;
+            display: flex;
+            line-height: 20px;
+        }
+
+        #sub {
+            display: flex;
+            justify-content: space-end;
+            width: 100%;
+            
+        }
+                .subscribe {
+            width: 10%;
+            display: flex;
+            justify-content: space-end;
+                    margin-right: 20%;
+        }
+                #submit {
+            
+            display: flex;
+            
+                    justify-content: center;
+                    margin-top:10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form>
+            <label for="fname" id="email">Email ID:</label>
+            <input type="email" id="email" name="email">
+           <div id="sub"><p>Did you subscribe to Web Push?</p></div>
+           <div id="sub">  <label for="yes" >Yes:</label>
+                <input type="radio" id="suby" class="subscribe" name="subscribe">
+            
+             <label for="no" >No:</label>
+                <input type="radio" id="subn" class="subscribe" name="subscribe">
+            </div>
+            <div id="submit"><input type="submit" value="Submit" ></div>
+
+        </form>
+    </div>
+    <script>
+        if(document.getElementById('suby').checked == true) {   
+         webengage.user.setAttribute("Subscription", "Yes")};   
+
+         if(document.getElementById('subn').checked == true){
+           webengage.user.setAttribute("Subscription", "No")
+            };
+            webengage.user.login(document.getElementById("email").value);  
+
+    </script>
+</body>
+
+</html>
