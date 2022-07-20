@@ -65,6 +65,7 @@ arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z)
         </form>
     </div>
     <script>
+        document.getElementById("submit").onclick = function(){
         if(document.getElementById('suby').checked == true) {   
          webengage.user.setAttribute("Subscription", "Yes")
                     console.log("This is No!")};   
@@ -75,6 +76,7 @@ arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z)
             };
             webengage.user.login(document.getElementById("email").value);
             console.log(document.getElementById("email").value);
+        };
 
     </script>
 </body>
