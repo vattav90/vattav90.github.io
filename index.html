@@ -54,11 +54,7 @@
                 // network issues, campaigns not present for a particular tag
                 return console.error('Error from moengage:', err);
             }
-            console.log(data);
-            
-
-            var payload = data.payload; // Campaign payload defined during campaign creation
-            webp = data.payload;
+            window.webpresponse = data.payload;
             console.log(webp);
             var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you've successfully rendered the HTML as per the payload provided.
 
@@ -67,7 +63,7 @@
             }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
 
         });
-        console.log(webp);
+        console.log(window.webpresponse);
         
         Moengage.call_web_push({
             "soft_ask": true,
@@ -294,7 +290,7 @@
             }
 
         }
-    document.getElementById("WebPData").innerHTML=webp;
+    document.getElementById("WebPData").innerHTML=webp.title;
     </script>
 
 </body>
