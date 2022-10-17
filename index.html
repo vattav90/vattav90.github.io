@@ -47,7 +47,7 @@
             debug_logs: 0
         });
         var webp;
-        Moengage.onsite.registerCallback("tagName", function(err, data) {
+        async Moengage.onsite.registerCallback("tagName", function(err, data) {
             if (err) {
                 // Handle error case here
                 // We could get error for various reasons, like
@@ -56,7 +56,6 @@
             }
             webp = data.payload;
             console.log(webp);
-            domManupulator(data.payload);
             var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you've successfully rendered the HTML as per the payload provided.
 
             var clickTracker = data.click({
@@ -65,85 +64,6 @@
 
         });
         console.log(webp);
-        const domManupulator = (operation) => {
-            const { type } = operation;
-            switch (type) {
-                case 'insert': {
-                    const {
-                        target: operationTarget,
-                        content: operationContent,
-                        placement: operationPlacement,
-                    } = operation;
-                    const targetNode = document.querySelector(operationTarget);
-                    const content = getParsedHTML(operationContent);
-                    if (
-                        targetNode &&
-                        targetNode.parentNode &&
-                        content &&
-                        operationPlacement
-                    ) {
-                        if (operation.placement === 'after') {
-                            targetNode.parentNode.insertBefore(content, targetNode.nextSibling);
-                        } else if (operation.placement === 'before') {
-                            targetNode.parentNode.insertBefore(content, targetNode);
-                        }
-                    }
-                    break;
-                }
-                case 'replace': {
-                    const { target: operationTarget, content: operationContent } = operation;
-                    const targetNode = document.querySelector(operationTarget);
-                    const content = getParsedHTML(operationContent);
-                    if (targetNode && content) {
-                        targetNode.replaceWith(content);
-                    }
-                    break;
-                }
-                case 'delete': {
-                    const targetNode = document.querySelector(operation.target);
-                    targetNode.remove();
-                    break;
-                }
-                case 'hide': {
-                    const targetNode = document.querySelector(operation.target);
-                    targetNode.style.display = 'none';
-                    break;
-                }
-                case 'attribute': {
-                    const {
-                        target: operationTarget,
-                        attributes: operationAttributes,
-                        initialAttributes: operationInitialAttributes,
-                    } = operation;
-                    const targetNode = document.querySelector(operationTarget);
-                    if (targetNode && operationAttributes) {
-                        Object.keys(operationAttributes).forEach(attr => {
-                            if (attr === 'style') {
-                                const initAttr = targetNode.getAttribute(attr) || '';
-                                const attrValue =
-                                    getNormalizedStyles(operationAttributes[attr]) + initAttr;
-                                targetNode.setAttribute(attr, attrValue);
-                            } else {
-                                targetNode.setAttribute(attr, operationAttributes[attr]);
-                            }
-                        });
-                    }
-                    break;
-                }
-                case 'tracking': {
-                    const { target: operationTarget, id: operationId } = operation;
-                    const targetNode = document.querySelector(operationTarget);
-                    if (targetNode && operationId) {
-                        targetNode.addEventListener('click', () => {
-                            getWindowMoeVar().track_event(INAPP_CONSTANTS.EVENT_NAMES.WP.CLICK, {
-                                id: operationId,
-                            });
-                        });
-                    }
-                    break;
-                }
-            }
-        };
         
         Moengage.call_web_push({
             "soft_ask": true,
@@ -370,7 +290,18 @@
             }
 
         }
+        
+ var interval = setInterval(function() {
+console.log('Interval Running');
+if( webp == "undefined" || variable == ""){
+    document.getElementById("WebPData").innerHTML="loading..."
+}else{
+console.log('Interval Stopped');
+clearInterval(interval);
     document.getElementById("WebPData").innerHTML=webp.title;
+}
+}, 1000);
+    
     </script>
 
 </body>
