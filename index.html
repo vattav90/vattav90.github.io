@@ -46,7 +46,7 @@
             app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
             debug_logs: 0
         });
-        var webp;
+        var webp = 0;
         Moengage.onsite.registerCallback("tagName", function(err, data) {
             if (err) {
                 // Handle error case here
@@ -293,7 +293,7 @@
         
  var interval = setInterval(function() {
 console.log('Interval Running');
-if( webp === "undefined" || webp === ""){
+if( webp === 0 ){
     document.getElementById("WebPData").innerHTML="loading...";
 }else{
 console.log('Interval Stopped');
