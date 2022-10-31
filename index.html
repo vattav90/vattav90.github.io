@@ -44,8 +44,7 @@
 
         Moengage = moe({
             app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
-            debug_logs: 0,
-cards: {
+            debug_logs: 0,cards: {
       enable: true,
       placeholder: "#cardIcon", 
       backgroundColor: "#F6FBFC", 
@@ -82,7 +81,7 @@ cards: {
         backgroundColor: "#fff", 
       },
       webFloating: {
-        enable: false, 
+        enable: true, 
         icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", 
         postion: "0px 10px 40px 0", 
         countBackgroundColor: "#FF5A5F",
@@ -109,6 +108,7 @@ cards: {
         text: "No notifications to show, check again later.",
       }
     }
+
         });
         var webp = 0;
         Moengage.onsite.registerCallback("tagName", function(err, data) {
