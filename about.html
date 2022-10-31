@@ -12,69 +12,70 @@
 	cluster: "DC_1",
 	
             cards: {
-                "enable": true,
-        "placeholder": "#cardIcon",
-         "overLayColor": "rgba(0, 0, 0, 0.6)",
-  "backgroundColor": "#525a5c",
-  "navigationBar": {
-    "backgroundColor": "#b4c0e0",
-    "text": "Inbox",
-    "color": "#fff",
-    "fontSize": "16px",
-    "fontFamily": "monospace"
-  },
-  "closeButton": {
-    "mWebIcon": "https://app-cdn.moengage.com/sdk/back-icon.svg",
-    "webIcon": "https://app-cdn.moengage.com/sdk/cross-icon.svg"
-  },
-  "tab": {
-    "inactiveTabFontColor": "#7C7C7C",
-    "fontSize": "14px",
-    "fontFamily": "inherit",
-    "backgroundColor": "#F6FBFC",
-    "active": {
-      "color": "#06A6B7",
-      "underlineColor": "#06A6B7",
-      "backgroundColor": "transparent"
+      enable: true,
+      placeholder: "#cardIcon", 
+      backgroundColor: "#F6FBFC", 
+      overLayColor: "rgba(0, 0, 0, 0.8)",
+      cardDismiss: {
+        color: "#db2828",
+        enable: false 
+      },
+      optionButtonColor: "#C4C4C4", 
+      dateTimeColor: "#8E8E8E", 
+      unclickedCardIndicatorColor: "blue", 
+      pinIcon: "https://app-cdn.moengage.com/sdk/pin-icon.svg", 
+      refreshIcon: "https://app-cdn.moengage.com/sdk/refresh-icon.svg", 
+      navigationBar: {
+        backgroundColor: "#00237C", 
+        text: "Notifications", 
+        color: "#fff", 
+        fontSize: "16px", 
+        fontFamily: "inherit",
+      },
+      closeButton: {
+        webIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+        mWebIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+      },
+      tab: {
+        active: {
+          color: "#06A6B7",
+          underlineColor: "#06A6B7",
+          backgroundColor: "transparent"
+        },
+        inactiveTabFontColor: "#7C7C7C",
+        fontSize: "14px", 
+        fontFamily: "inherit", 
+        backgroundColor: "#fff", 
+      },
+      webFloating: {
+        enable: true, 
+        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", 
+        postion: "0px 10px 40px 0", 
+        countBackgroundColor: "#FF5A5F",
+        countColor: "#fff",
+        iconBackgroundColor: "#D9DFED"
+      },
+      mWebFloating: {
+        enable: false,
+        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+        postion: "0px 10px 40px 0", 
+        countBackgroundColor: "#FF5A5F",
+        countColor: "#fff",
+        iconBackgroundColor: "#D9DFED"
+      },
+      card: {
+        headerFontSize: "16px",
+        descriptionFontSize: "14px",
+        ctaFontSize: "12px",
+        fontFamily: "inherit",
+        horizontalRowColor: "#D9DFED"
+      },
+      noDataContent: {
+        img: "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
+        text: "No notifications to show, check again later.",
+      }
     }
-  },
-  "cardDismiss": {
-    "color": "red",
-    "enable": false
-  },
-  "optionButtonColor": "#C4C4C4",
-  "dateTimeColor": "#8E8E8E",
-  "unclickedCardIndicatorColor": "blue",
-  "pinIcon": "https://app-cdn.moengage.com/sdk/pin-icon.svg",
-  "refreshIcon": "https://app-cdn.moengage.com/sdk/refresh-icon.svg",
-  "webFloating": {
-    "enable": true,
-    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
-    "postion": "0px 10px 40px 0",
-    "countBackgroundColor": "#FF5A5F",
-    "countColor": "#fff",
-    "iconBackgroundColor": "#D9DFED"
-  },
-  "mWebFloating": {
-    "enable": true,
-    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
-    "postion": "0px 10px 40px 0",
-    "countBackgroundColor": "#FF5A5F",
-    "countColor": "#fff",
-    "iconBackgroundColor": "#D9DFED"
-  },
-  "card": {
-    "headerFontSize": "16px",
-    "descriptionFontSize": "14px",
-    "ctaFontSize": "12px",
-    "fontFamily": "monospace",
-    "horizontalRowColor": "#D9DFED"
-  },
-  "noDataContent": {
-    "img": "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
-    "text": "No notifications to show, check again later."
-  }
-}
+
 	    });
 	</script>
 </head>
