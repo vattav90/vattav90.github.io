@@ -257,11 +257,9 @@
             }
             webp = data.payload;
             console.log(webp);
-            impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you've successfully rendered the HTML as per the payload provided.
+            impTracker = data.imp; 
 
-            clickTracker = data.click({
-                widget_id: "sample_widget_id"
-            }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+            clickTracker = data.click({widget_id: "sample_widget_id"}); 
 
         });
         console.log(webp);
@@ -304,10 +302,8 @@
         </div>
     </div>
     <div id="container">
-        <span id="WebPData">
-<img id="heroimage" src="#" onclick="clickTracker()">
-            <p id="caption" onclick="clickTracker()"></p>
-        </span>
+<img id="heroimage" src="#">
+            <p id="caption"></p>
         <div id="header">
             <h1>Simple HTML Template</h1>
         </div>
@@ -372,6 +368,10 @@ clearInterval(interval);
     
 }
 }, 1000);
+
+function click(){
+    document.getElementById("caption").addEventListener("click", clickTracker());
+        document.getElementById("heroimage").addEventListener("click", clickTracker());}
     
     </script>
 
