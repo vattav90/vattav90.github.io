@@ -259,7 +259,10 @@
             console.log(webp);
             impTracker = data.imp; 
 
-            clickTracker = data.click({widget_id: "sample_widget_id"}); 
+            clickTracker = data.click;
+        document.getElementById("caption").addEventListener('click', function() {clickTracker({widget_id: 'caption'})})
+        document.getElementById("heroimage").addEventListener('click', function() {clickTracker({widget_id: 'heroimage'})})
+    
 
         });
         console.log(webp);
@@ -369,10 +372,7 @@ clearInterval(interval);
 }
 }, 1000);
 
-function click(){
-    document.getElementById("caption").addEventListener("click", clickTracker());
-        document.getElementById("heroimage").addEventListener("click", clickTracker());}
-    
+
     </script>
 
 </body>
