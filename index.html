@@ -303,8 +303,8 @@
     </div>
     <div id="container">
         <span id="WebPData">
-<img id="heroimage" src="#">
-            <p id="caption"></p>
+<img id="heroimage" src="#" onclick="clickTracker()">
+            <p id="caption" onclick="clickTracker()"></p>
         </span>
         <div id="header">
             <h1>Simple HTML Template</h1>
@@ -366,6 +366,8 @@ console.log('Interval Stopped');
 clearInterval(interval);
     document.getElementById("caption").innerHTML=webp.title;
     document.getElementById("heroimage").src=webp.img;
+    impTracker();
+    
 }
 }, 1000);
     
