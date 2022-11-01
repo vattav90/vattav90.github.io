@@ -302,7 +302,10 @@
         </div>
     </div>
     <div id="container">
-        <span id="WebPData"></span>
+        <span id="WebPData">
+<img id="heroimage" src="#">
+            <p id="caption"></p>
+        </span>
         <div id="header">
             <h1>Simple HTML Template</h1>
         </div>
@@ -354,16 +357,17 @@
 
         }
         
- /*var interval = setInterval(function() {
+ var interval = setInterval(function() {
 console.log('Interval Running');
 if( webp === 0 ){
     document.getElementById("WebPData").innerHTML="loading...";
 }else{
 console.log('Interval Stopped');
 clearInterval(interval);
-    document.getElementById("WebPData").innerHTML=webp.title;
+    document.getElementById("caption").innerHTML=webp.title;
+    document.getElementById("heroimage").src=webp.img;
 }
-}, 1000);*/
+}, 1000);
     
     </script>
 
