@@ -3,6 +3,7 @@
 
 <head>
     <title>Home | Simple HTML Template</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background-color: #eaeaea !important;
@@ -73,72 +74,72 @@
         Moengage = moe({
             app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
             debug_logs: 0,
-            cards: {
-                "enable": true,
-                "placeholder": "#cardIcon",
-                "overLayColor": "rgba(0, 0, 0, 0.6)",
-                "backgroundColor": "#525a5c",
-                "navigationBar": {
-                    "backgroundColor": "#b4c0e0",
-                    "text": "Inbox",
-                    "color": "#fff",
-                    "fontSize": "16px",
-                    "fontFamily": "monospace"
-                },
-                "closeButton": {
-                    "mWebIcon": "https://app-cdn.moengage.com/sdk/back-icon.svg",
-                    "webIcon": "https://app-cdn.moengage.com/sdk/cross-icon.svg"
-                },
-                "tab": {
-                    "inactiveTabFontColor": "#7C7C7C",
-                    "fontSize": "14px",
-                    "fontFamily": "inherit",
-                    "backgroundColor": "#F6FBFC",
-                    "active": {
-                        "color": "#06A6B7",
-                        "underlineColor": "#06A6B7",
-                        "backgroundColor": "transparent"
-                    }
-                },
-                "cardDismiss": {
-                    "color": "red",
-                    "enable": false
-                },
-                "optionButtonColor": "#C4C4C4",
-                "dateTimeColor": "#8E8E8E",
-                "unclickedCardIndicatorColor": "blue",
-                "pinIcon": "https://app-cdn.moengage.com/sdk/pin-icon.svg",
-                "refreshIcon": "https://app-cdn.moengage.com/sdk/refresh-icon.svg",
-                "webFloating": {
-                    "enable": true,
-                    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
-                    "postion": "0px 10px 40px 0",
-                    "countBackgroundColor": "#FF5A5F",
-                    "countColor": "#fff",
-                    "iconBackgroundColor": "#D9DFED"
-                },
-                "mWebFloating": {
-                    "enable": true,
-                    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
-                    "postion": "0px 10px 40px 0",
-                    "countBackgroundColor": "#FF5A5F",
-                    "countColor": "#fff",
-                    "iconBackgroundColor": "#D9DFED"
-                },
-                "card": {
-                    "headerFontSize": "16px",
-                    "descriptionFontSize": "14px",
-                    "ctaFontSize": "12px",
-                    "fontFamily": "monospace",
-                    "horizontalRowColor": "#D9DFED"
-                },
-                "noDataContent": {
-                    "img": "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
-                    "text": "No notifications to show, check again later."
-                }
-            }
+      cards: {
+      enable: true,
+      placeholder: "#cardIcon", 
+      backgroundColor: "#F6FBFC", 
+      overLayColor: "rgba(0, 0, 0, 0.8)",
+      cardDismiss: {
+        color: "#db2828",
+        enable: false 
+      },
+      optionButtonColor: "#C4C4C4", 
+      dateTimeColor: "#8E8E8E", 
+      unclickedCardIndicatorColor: "blue", 
+      pinIcon: "https://app-cdn.moengage.com/sdk/pin-icon.svg", 
+      refreshIcon: "https://app-cdn.moengage.com/sdk/refresh-icon.svg", 
+      navigationBar: {
+        backgroundColor: "#00237C", 
+        text: "Notifications", 
+        color: "#fff", 
+        fontSize: "16px", 
+        fontFamily: "inherit",
+      },
+      closeButton: {
+        webIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+        mWebIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+      },
+      tab: {
+        active: {
+          color: "#06A6B7",
+          underlineColor: "#06A6B7",
+          backgroundColor: "transparent"
+        },
+        inactiveTabFontColor: "#7C7C7C",
+        fontSize: "14px", 
+        fontFamily: "inherit", 
+        backgroundColor: "#fff", 
+      },
+      webFloating: {
+        enable: true, 
+        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", 
+        postion: "0px 10px 40px 0", 
+        countBackgroundColor: "#FF5A5F",
+        countColor: "#fff",
+        iconBackgroundColor: "#D9DFED"
+      },
+      mWebFloating: {
+        enable: false,
+        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+        postion: "0px 10px 40px 0", 
+        countBackgroundColor: "#FF5A5F",
+        countColor: "#fff",
+        iconBackgroundColor: "#D9DFED"
+      },
+      card: {
+        headerFontSize: "16px",
+        descriptionFontSize: "14px",
+        ctaFontSize: "12px",
+        fontFamily: "inherit",
+        horizontalRowColor: "#D9DFED"
+      },
+      noDataContent: {
+        img: "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
+        text: "No notifications to show, check again later.",
+      }
+    }
         });
-
+Moengage.add_unique_user_id("Varun");
     </script>
 </head>
 
@@ -155,20 +156,6 @@
     </div>
 
     <script>
-        /*const cards = async() => {
-        let carM = await Moengage.cards.getCardsForCategory('Teasers');
-        await new Promise((resolve, reject) => setTimeout(resolve, 6000));
-        console.log(carM);
-        return(carM);
-        }
-        
-        cards().then(carM => console.log(carM));
-
-        document.addEventListener("", function() {
-                    Moengage.cards.getCardsForCategory('Teasers').then(function(cards) {
-                        console.log(cards);
-                    })
-                });*/
         let carlen = 0;
         var interval = setInterval(function() {
                 console.log('Interval Running');
@@ -180,6 +167,7 @@
                     document.getElementById("heroimage").style.display = "none";
                     let x = Moengage.cards.getCardsForCategory('Teasers').then(function(cards) {
                             let len = cards.length;
+                            let n = 0;
                             for (let i = 0; i < len; i++) {
                                 if (cards[i]['templateData']['containers'][0]['widgets'][0]['type'] === "image") {
                                     const img = cards[i]['templateData']['containers'][0]['widgets'][0]['content'];
@@ -189,8 +177,9 @@
                                     dive.appendChild(imge);
                                     console.log(img)
                                     imge.src = img;
-                                    dive.classList.add(i);
-                                    if (i === 1) {
+                                    n++;
+                                    dive.classList.add(n);
+                                    if (n === 1) {
                                         dive.classList.add("carousel_item-selected");
                                     } else {
                                         dive.classList.add("carousel_item");
