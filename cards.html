@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home | Simple HTML Template</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #eaeaea !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .carousel_item {
+            display: none;
+        }
+
+        .carousel_item_selected {
+            display: block;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m, n) {
+            i.moengage_object = r;
+            t = {};
+            q = function(f) {
+                return function() {
+                    (i.moengage_q = i.moengage_q || []).push({
+                        f: f,
+                        a: arguments
+                    })
+                }
+            };
+            f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track', 'location_type_attribute'], h = {
+                onsite: ["getData", "registerCallback"]
+            };
+            for (k in f) {
+                t[f[k]] = q(f[k])
+            }
+            for (k in h)
+                for (l in h[k]) {
+                    null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
+                }
+            a = s.createElement(o);
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+            i.moe = i.moe || function() {
+                n = arguments[0];
+                return t
+            };
+            a.onload = function() {
+                if (n) {
+                    i[r] = moe(n)
+                }
+            }
+        })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
+
+        Moengage = moe({
+            app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
+            debug_logs: 0,
+            cards: {
+                "enable": true,
+                "placeholder": "#cardIcon",
+                "overLayColor": "rgba(0, 0, 0, 0.6)",
+                "backgroundColor": "#525a5c",
+                "navigationBar": {
+                    "backgroundColor": "#b4c0e0",
+                    "text": "Inbox",
+                    "color": "#fff",
+                    "fontSize": "16px",
+                    "fontFamily": "monospace"
+                },
+                "closeButton": {
+                    "mWebIcon": "https://app-cdn.moengage.com/sdk/back-icon.svg",
+                    "webIcon": "https://app-cdn.moengage.com/sdk/cross-icon.svg"
+                },
+                "tab": {
+                    "inactiveTabFontColor": "#7C7C7C",
+                    "fontSize": "14px",
+                    "fontFamily": "inherit",
+                    "backgroundColor": "#F6FBFC",
+                    "active": {
+                        "color": "#06A6B7",
+                        "underlineColor": "#06A6B7",
+                        "backgroundColor": "transparent"
+                    }
+                },
+                "cardDismiss": {
+                    "color": "red",
+                    "enable": false
+                },
+                "optionButtonColor": "#C4C4C4",
+                "dateTimeColor": "#8E8E8E",
+                "unclickedCardIndicatorColor": "blue",
+                "pinIcon": "https://app-cdn.moengage.com/sdk/pin-icon.svg",
+                "refreshIcon": "https://app-cdn.moengage.com/sdk/refresh-icon.svg",
+                "webFloating": {
+                    "enable": true,
+                    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+                    "postion": "0px 10px 40px 0",
+                    "countBackgroundColor": "#FF5A5F",
+                    "countColor": "#fff",
+                    "iconBackgroundColor": "#D9DFED"
+                },
+                "mWebFloating": {
+                    "enable": true,
+                    "icon": "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+                    "postion": "0px 10px 40px 0",
+                    "countBackgroundColor": "#FF5A5F",
+                    "countColor": "#fff",
+                    "iconBackgroundColor": "#D9DFED"
+                },
+                "card": {
+                    "headerFontSize": "16px",
+                    "descriptionFontSize": "14px",
+                    "ctaFontSize": "12px",
+                    "fontFamily": "monospace",
+                    "horizontalRowColor": "#D9DFED"
+                },
+                "noDataContent": {
+                    "img": "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
+                    "text": "No notifications to show, check again later."
+                }
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="buttons">
+        <h1>Cards as banner</h1>
+    </div>
+    <div id="container">
+        <img id="heroimage" src="loading-33.webp">
+    </div>
+    <div id="buttons">
+        <button id="previous" onclick="previous()">&lt;</button>
+        <button id="next" onclick="next()">&gt;</button>
+    </div>
+
+    <script>
+        /*const cards = async() => {
+        let carM = await Moengage.cards.getCardsForCategory('Teasers');
+        await new Promise((resolve, reject) => setTimeout(resolve, 6000));
+        console.log(carM);
+        return(carM);
+        }
+        
+        cards().then(carM => console.log(carM));
+
+        document.addEventListener("", function() {
+                    Moengage.cards.getCardsForCategory('Teasers').then(function(cards) {
+                        console.log(cards);
+                    })
+                });*/
+        let carlen = 0;
+        var interval = setInterval(function() {
+                console.log('Interval Running');
+                if (Moengage.cards === undefined) {
+                    console.log("waiting")
+                } else {
+                    console.log('Interval Stopped');
+                    clearInterval(interval);
+                    document.getElementById("heroimage").style.display = "none";
+                    let x = Moengage.cards.getCardsForCategory('Teasers').then(function(cards) {
+                            let len = cards.length;
+                            for (let i = 0; i < len; i++) {
+                                if (cards[i]['templateData']['containers'][0]['widgets'][0]['type'] === "image") {
+                                    const img = cards[i]['templateData']['containers'][0]['widgets'][0]['content'];
+                                    const dive = document.createElement("div");
+                                    const imge = document.createElement("img");
+                                    document.getElementById('container').appendChild(dive);
+                                    dive.appendChild(imge);
+                                    console.log(img)
+                                    imge.src = img;
+                                    dive.classList.add(i);
+                                    if (i === 1) {
+                                        dive.classList.add("carousel_item-selected");
+                                    } else {
+                                        dive.classList.add("carousel_item");
+                                    };
+
+                                    console.log(cards);
+                                    carlen++;
+                                }
+
+                            };
+
+                        }
+
+                    )
+                }
+            
+            },
+            1000);
+
+
+        function next() {
+            let c = document.getElementsByClassName("carousel_item-selected")[0].classList[0];
+            let nex = Number(c) + 1;
+            if (nex > carlen) {
+                document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
+                document.getElementsByClassName(c)[0].classList.add("carousel_item");
+                document.getElementsByClassName("1")[0].classList.add("carousel_item-selected");
+                document.getElementsByClassName("1")[0].classList.remove("carousel_item");
+            } else {
+                document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
+                document.getElementsByClassName(c)[0].classList.add("carousel_item");
+                document.getElementsByClassName(nex)[0].classList.add("carousel_item-selected");
+                document.getElementsByClassName(nex)[0].classList.remove("carousel_item");
+            }
+        }
+
+        function previous() {
+            let c = document.getElementsByClassName("carousel_item-selected")[0].classList[0];
+            let pre = Number(c) - 1;
+            if (pre === 0) {
+                document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
+                document.getElementsByClassName(c)[0].classList.add("carousel_item");
+                document.getElementsByClassName(carlen)[0].classList.add("carousel_item-selected");
+                document.getElementsByClassName(carlen)[0].classList.remove("carousel_item");
+            } else {
+                document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
+                document.getElementsByClassName(c)[0].classList.add("carousel_item");
+                document.getElementsByClassName(pre)[0].classList.add("carousel_item-selected");
+                document.getElementsByClassName(pre)[0].classList.remove("carousel_item");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
