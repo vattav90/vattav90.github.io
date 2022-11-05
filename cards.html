@@ -8,26 +8,100 @@
             background-color: #eaeaea !important;
             margin: 0;
             padding: 0;
+            width:100%
         }
 
         #container {
             display: flex;
             justify-content: center;
             margin: 10px;
+            flex-direction: row;
+            position: relative;
+            align-items: center;
+            width:100%;
         }
 
         .carousel_item {
             display: none;
+            flex-direction: column;
+
         }
 
         .carousel_item_selected {
-            display: block;
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: column;
         }
 
-        #buttons {
+        img {
+            border-radius: 10px;
+        }
+
+        #buttons-next {
             display: flex;
             justify-content: center;
             margin: 10px;
+            position: absolute;
+            right:23%;
+            cursor:pointer;
+        }
+
+        #buttons-prev {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            position: absolute;
+            left: 23%;
+            cursor:pointer;
+        }
+        
+        #previous,#next{
+            border-radius: 50%;
+            border:none;
+            background: white;
+            
+        }
+
+        #title {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+        
+        .select{
+            border-radius: 50%;
+            border:none;
+            background: white;
+            padding:5px;
+            margin:3px;
+            cursor:pointer;
+        }
+        
+        .select-highlight{
+            border-radius: 50%;
+            border:none;
+            background: gray;
+            padding:5px;
+            margin:3px;
+            cursor:pointer;
+        }
+        .select-container{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            flex-direction: row;
+            position: absolute;
+            align-items: flex-end;
+            bottom:70px;
+            
+        }
+
+        h1,
+        h3 {
+            display: flex;
+            justify-content: center;
         }
 
     </style>
@@ -73,86 +147,94 @@
         Moengage = moe({
             app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
             debug_logs: 0,
-      cards: {
-      enable: true,
-      placeholder: "#cardIcon", 
-      backgroundColor: "#F6FBFC", 
-      overLayColor: "rgba(0, 0, 0, 0.8)",
-      cardDismiss: {
-        color: "#db2828",
-        enable: false 
-      },
-      optionButtonColor: "#C4C4C4", 
-      dateTimeColor: "#8E8E8E", 
-      unclickedCardIndicatorColor: "blue", 
-      pinIcon: "https://app-cdn.moengage.com/sdk/pin-icon.svg", 
-      refreshIcon: "https://app-cdn.moengage.com/sdk/refresh-icon.svg", 
-      navigationBar: {
-        backgroundColor: "#00237C", 
-        text: "Notifications", 
-        color: "#fff", 
-        fontSize: "16px", 
-        fontFamily: "inherit",
-      },
-      closeButton: {
-        webIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
-        mWebIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
-      },
-      tab: {
-        active: {
-          color: "#06A6B7",
-          underlineColor: "#06A6B7",
-          backgroundColor: "transparent"
-        },
-        inactiveTabFontColor: "#7C7C7C",
-        fontSize: "14px", 
-        fontFamily: "inherit", 
-        backgroundColor: "#fff", 
-      },
-      webFloating: {
-        enable: true, 
-        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", 
-        postion: "0px 10px 40px 0", 
-        countBackgroundColor: "#FF5A5F",
-        countColor: "#fff",
-        iconBackgroundColor: "#D9DFED"
-      },
-      mWebFloating: {
-        enable: false,
-        icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg",
-        postion: "0px 10px 40px 0", 
-        countBackgroundColor: "#FF5A5F",
-        countColor: "#fff",
-        iconBackgroundColor: "#D9DFED"
-      },
-      card: {
-        headerFontSize: "16px",
-        descriptionFontSize: "14px",
-        ctaFontSize: "12px",
-        fontFamily: "inherit",
-        horizontalRowColor: "#D9DFED"
-      },
-      noDataContent: {
-        img: "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
-        text: "No notifications to show, check again later.",
-      }
-    }
+            cards: {
+                enable: true,
+                placeholder: "#cardIcon",
+                backgroundColor: "#F6FBFC",
+                overLayColor: "rgba(0, 0, 0, 0.8)",
+                cardDismiss: {
+                    color: "#db2828",
+                    enable: false
+                },
+                optionButtonColor: "#C4C4C4",
+                dateTimeColor: "#8E8E8E",
+                unclickedCardIndicatorColor: "blue",
+                pinIcon: "https://app-cdn.moengage.com/sdk/pin-icon.svg",
+                refreshIcon: "https://app-cdn.moengage.com/sdk/refresh-icon.svg",
+                navigationBar: {
+                    backgroundColor: "#00237C",
+                    text: "Notifications",
+                    color: "#fff",
+                    fontSize: "16px",
+                    fontFamily: "inherit",
+                },
+                closeButton: {
+                    webIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+                    mWebIcon: "https://app-cdn.moengage.com/sdk/cross-icon.svg",
+                },
+                tab: {
+                    active: {
+                        color: "#06A6B7",
+                        underlineColor: "#06A6B7",
+                        backgroundColor: "transparent"
+                    },
+                    inactiveTabFontColor: "#7C7C7C",
+                    fontSize: "14px",
+                    fontFamily: "inherit",
+                    backgroundColor: "#fff",
+                },
+                webFloating: {
+                    enable: true,
+                    icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+                    postion: "0px 10px 40px 0",
+                    countBackgroundColor: "#FF5A5F",
+                    countColor: "#fff",
+                    iconBackgroundColor: "#D9DFED"
+                },
+                mWebFloating: {
+                    enable: false,
+                    icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg",
+                    postion: "0px 10px 40px 0",
+                    countBackgroundColor: "#FF5A5F",
+                    countColor: "#fff",
+                    iconBackgroundColor: "#D9DFED"
+                },
+                card: {
+                    headerFontSize: "16px",
+                    descriptionFontSize: "14px",
+                    ctaFontSize: "12px",
+                    fontFamily: "inherit",
+                    horizontalRowColor: "#D9DFED"
+                },
+                noDataContent: {
+                    img: "https://app-cdn.moengage.com/sdk/cards-no-result.svg",
+                    text: "No notifications to show, check again later.",
+                }
+            }
         });
-Moengage.add_unique_user_id("Varun");
+        Moengage.add_unique_user_id("Varun");
+
     </script>
 </head>
 
 <body>
-    <div id="buttons">
+    <div id="title">
         <h1>Cards as banner</h1>
     </div>
     <div id="container">
         <img id="heroimage" src="loading-33.webp">
+        <div id="buttons-prev">
+            <button id="previous" onclick="previous()">&lt;</button>
+        </div>
+        <div id="buttons-next">
+            <button id="next" onclick="next()">&gt;</button>
+        </div>
+        <div id="select-container" class="select-container">
+
+        
+        </div>
     </div>
-    <div id="buttons">
-        <button id="previous" onclick="previous()">&lt;</button>
-        <button id="next" onclick="next()">&gt;</button>
-    </div>
+
 
     <script>
         let carlen = 0;
@@ -170,19 +252,34 @@ Moengage.add_unique_user_id("Varun");
                             for (let i = 0; i < len; i++) {
                                 if (cards[i]['templateData']['containers'][0]['widgets'][0]['type'] === "image") {
                                     const img = cards[i]['templateData']['containers'][0]['widgets'][0]['content'];
+                                    const tit = (cards[i]['templateData']['containers'][0]['widgets'][1]['content']).replace(/<div>/, "");
+                                    const des = (cards[i]['templateData']['containers'][0]['widgets'][2]['content']).replace(/<div>/, "");
                                     const dive = document.createElement("div");
                                     const imge = document.createElement("img");
+                                    const title = document.createElement("h1");
+                                    const desc = document.createElement("h3");
+                                    const selcon = document.createElement("button");
                                     document.getElementById('container').appendChild(dive);
+                                    dive.appendChild(title);
                                     dive.appendChild(imge);
+                                    dive.appendChild(desc);
+                                    document.getElementById('select-container').appendChild(selcon);
                                     console.log(img)
                                     imge.src = img;
+                                    title.innerHTML = tit;
+                                    desc.innerHTML = des;
                                     n++;
                                     dive.classList.add(n);
+                                    s = "s"+String(n);
+                                    selcon.classList.add(s);
                                     if (n === 1) {
                                         dive.classList.add("carousel_item-selected");
+                                        selcon.classList.add("select-highlight");
                                     } else {
                                         dive.classList.add("carousel_item");
+                                        selcon.classList.add("select");
                                     };
+                                   
 
                                     console.log(cards);
                                     carlen++;
@@ -193,8 +290,9 @@ Moengage.add_unique_user_id("Varun");
                         }
 
                     )
+                    intervalnew();
                 }
-            
+
             },
             1000);
 
@@ -202,34 +300,66 @@ Moengage.add_unique_user_id("Varun");
         function next() {
             let c = document.getElementsByClassName("carousel_item-selected")[0].classList[0];
             let nex = Number(c) + 1;
+            let s = "s" + String(c);
+            let snex = "s" + String(nex);
             if (nex > carlen) {
                 document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
                 document.getElementsByClassName(c)[0].classList.add("carousel_item");
                 document.getElementsByClassName("1")[0].classList.add("carousel_item-selected");
                 document.getElementsByClassName("1")[0].classList.remove("carousel_item");
+                
+                document.getElementsByClassName(s)[0].classList.remove("select-highlight");
+                document.getElementsByClassName(s)[0].classList.add("select");
+                document.getElementsByClassName("s1")[0].classList.add("select-highlight");
+                document.getElementsByClassName("s1")[0].classList.remove("select");
             } else {
                 document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
                 document.getElementsByClassName(c)[0].classList.add("carousel_item");
                 document.getElementsByClassName(nex)[0].classList.add("carousel_item-selected");
                 document.getElementsByClassName(nex)[0].classList.remove("carousel_item");
+                
+                document.getElementsByClassName(s)[0].classList.remove("select-highlight");
+                document.getElementsByClassName(s)[0].classList.add("select");
+                document.getElementsByClassName(snex)[0].classList.add("select-highlight");
+                document.getElementsByClassName(snex)[0].classList.remove("select");
             }
-        }
+        };
 
         function previous() {
             let c = document.getElementsByClassName("carousel_item-selected")[0].classList[0];
             let pre = Number(c) - 1;
+            let s = "s" + String(c);
+            let spre = "s" + String(pre);
+            let sprev = "s" + String(carlen);
+        
             if (pre === 0) {
                 document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
                 document.getElementsByClassName(c)[0].classList.add("carousel_item");
                 document.getElementsByClassName(carlen)[0].classList.add("carousel_item-selected");
                 document.getElementsByClassName(carlen)[0].classList.remove("carousel_item");
+                
+                document.getElementsByClassName(s)[0].classList.remove("select-highlight");
+                document.getElementsByClassName(s)[0].classList.add("select");
+                document.getElementsByClassName(sprev)[0].classList.add("select-highlight");
+                document.getElementsByClassName(sprev)[0].classList.remove("select");
             } else {
                 document.getElementsByClassName(c)[0].classList.remove("carousel_item-selected");
                 document.getElementsByClassName(c)[0].classList.add("carousel_item");
                 document.getElementsByClassName(pre)[0].classList.add("carousel_item-selected");
                 document.getElementsByClassName(pre)[0].classList.remove("carousel_item");
+                
+                document.getElementsByClassName(s)[0].classList.remove("select-highlight");
+                document.getElementsByClassName(s)[0].classList.add("select");
+                document.getElementsByClassName(spre)[0].classList.add("select-highlight");
+                document.getElementsByClassName(spre)[0].classList.remove("select");
             }
-        }
+        };
+        
+var intervalnew = setInterval(function() {next();}, 3000);
+        
+
+        
+
 
     </script>
 
