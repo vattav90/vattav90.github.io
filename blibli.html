@@ -281,7 +281,7 @@
                             let len = cards.length;
                             let n = 0;
                             for (let i = 0; i < len; i++) {
-                                if (cards[i]['templateData']['containers'][0]['widgets'][0]['type'] === "image") {
+                                if (cards[i]['templateData']['containers'][0]['widgets'][0]['type'] === "image" && cards[i]['templateData']['type']==='illustration') {
                                     const img = cards[i]['templateData']['containers'][0]['widgets'][0]['content'];
                                     const tit = (cards[i]['templateData']['containers'][0]['widgets'][1]['content']).replace(/<div>/, "");
                                     const des = (cards[i]['templateData']['containers'][0]['widgets'][2]['content']).replace(/<div>/, "");
