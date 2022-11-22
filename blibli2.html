@@ -190,8 +190,9 @@
                 widget_id: "sample_widget_id"
             }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
 
-var len = payload['products'].length;           
-var x = dcoument.getElementsByClassName("image"); 
+var len = payload['products'].length;
+console.log(len);
+var x = document.getElementsByClassName("image"); 
 for  (let i = 0; i < len; i++){
                 
                 x[i].src = payload['products'][i]['productimagelink']
