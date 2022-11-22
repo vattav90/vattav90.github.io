@@ -231,6 +231,7 @@
             var y = document.getElementsByClassName("recotitle");
             var z = document.getElementsByClassName("recoprice");
             var a = document.querySelectorAll(".recoatcbut");
+            console.log(payload['layout']['buttoncolor']);
             var b = document.getElementById("headClass");
             b.innerHTML = payload['layout']['sectiontitle']
             for (let i = 0; i < len; i++) {
@@ -239,6 +240,7 @@
                 y[i].innerHTML = payload['products'][i]['producttitle']
                 z[i].innerHTML = 'Rp'+payload['products'][i]['productprice']
                 a[i].style.background = payload['layout']['buttoncolor']
+
                 
             };
 
