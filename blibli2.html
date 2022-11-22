@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background: white;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 20px;
+
+
+        }
+
+        #prodcontainer {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            flex-direction: row;
+            position: relative;
+            align-items: center;
+            width: 100%;
+        }
+
+        #product {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid #44a7b7;
+            padding: 10px;
+            width: 165px;
+            min-height: 300px;
+            max-height: 300px;
+
+
+        }
+
+        .image {
+            max-height: 150px;
+
+
+            border-radius: 5px;
+
+        }
+
+        .title {
+            padding: 5px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .price {
+            padding: 5px;
+            margin: auto;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .desc {
+            padding: 5px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .atcbut {
+            background: #44a7b7;
+            padding: 10px 30px;
+            margin: 10px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            width: 100%;
+        }
+
+        .butdiv {
+            display: flex;
+            position: relative;
+            justify-content: center;
+
+        }
+
+        .titdiv {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            min-height: 50px;
+            max-height: 50px;
+
+        }
+
+        .tcbut:hover {
+            background: #eaeaea;
+            color: black;
+
+        }
+
+        #product:hover {
+            box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+        }
+
+
+
+        .atcbut:hover {
+            background: #eaeaea;
+            color: black;
+
+        }
+
+
+
+        h2 {
+            font-size: 17px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m, n) {
+            i.moengage_object = r;
+            t = {};
+            q = function(f) {
+                return function() {
+                    (i.moengage_q = i.moengage_q || []).push({
+                        f: f,
+                        a: arguments
+                    })
+                }
+            };
+            f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track', 'location_type_attribute'], h = {
+                onsite: ["getData", "registerCallback"]
+            };
+            for (k in f) {
+                t[f[k]] = q(f[k])
+            }
+            for (k in h)
+                for (l in h[k]) {
+                    null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
+                }
+            a = s.createElement(o);
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+            i.moe = i.moe || function() {
+                n = arguments[0];
+                return t
+            };
+            a.onload = function() {
+                if (n) {
+                    i[r] = moe(n)
+                }
+            }
+        })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
+
+
+        Moengage = moe({
+            app_id: "DMQ61NVM1B2JEK8USBS1H1CO",
+            debug_logs: 0
+        });
+
+        Moengage.onsite.registerCallback("bli", function(err, data) {
+            if (err) {
+                // Handle error case here
+                // We could get error for various reasons, like
+                // network issues, campaigns not present for a particular tag
+                return console.error('Error from moengage:', err);
+            }
+            console.log('Data for campaign:', data);
+
+            var payload = data.payload; // Campaign payload defined during campaign creation
+
+            var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you have successfully rendered the HTML as per the payload provided.
+
+            var clickTracker = data.click({
+                widget_id: "sample_widget_id"
+            }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+
+
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <h1>BliBli Demo Day</h1>
+        </div>
+        <div id="prodcontainer">
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//98/MTA-68812720/kartika-toast_soes-snack-chocolate-kartika-toast-102-gr_full01.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Soes Snack Chocoloate Kartika</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp27900</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//94/MTA-24445470/biokul_biokul-drink-yogurt-plain-1000-ml_full01.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Biokul Drink Yogurt Plain 1000 ml</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp55800</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//88/MTA-11502942/nutella_nutella-spread-680g_full01.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Nutella Spread 680G</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp133190</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//97/MTA-45515275/grahams_graham-s_late_bottle_vintage_-750ml_full01_2228ee29.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Graham's Late Bottle Vintage</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp799000</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//104/MTA-49129556/alba-pastilles_alba-pastilles-original-candy--1-dus-100-pcs-_full05.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Permen Alba Pastilles Original</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp1150000</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+        </div>
+
+
+        <div>
+            <h1>Recommended Articles</h1>
+        </div>
+        <div id="prodcontainer">
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//98/MTA-68812720/kartika-toast_soes-snack-chocolate-kartika-toast-102-gr_full01.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Soes Snack Chocoloate Kartika Toast 102 GR</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp27900</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//94/MTA-24445470/biokul_biokul-drink-yogurt-plain-1000-ml_full01.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Biokul Drink Yogurt Plain 1000 ml</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp55800</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//115/MTA-56909976/siantar_top_biskuit_deo_goriorio_sandwich_14_gr_x_20_pcs_full01_cny8kzu1.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Biskuit Sandwich Goriorio Coklat</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp500</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//115/MTA-56909976/siantar_top_biskuit_deo_goriorio_sandwich_14_gr_x_20_pcs_full01_cny8kzu1.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Biskuit Sandwich Goriorio Coklat</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp500</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+            <div id="product">
+                <div>
+                    <img class="image" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/medium//115/MTA-56909976/siantar_top_biskuit_deo_goriorio_sandwich_14_gr_x_20_pcs_full01_cny8kzu1.jpg">
+                </div>
+                <div>
+                    <h2 class="title">Biskuit Sandwich Goriorio Coklat</h2>
+                </div>
+                <div>
+                    <h3 class="price">Rp500</h3>
+                </div>
+                <!--<div class="titdiv">
+                    <p class="desc">Description</p>
+                </div>-->
+                <div class="butdiv"><button class="atcbut">Add to Cart</button></div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
