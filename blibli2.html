@@ -222,9 +222,9 @@
 
             var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you have successfully rendered the HTML as per the payload provided.
 
-            var clickTracker = data.click({
+            /*var clickTracker = data.click({
                 widget_id: "sample_widget_id"
-            }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+            }); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.*/
 
             var len = payload['products'].length
             var x = document.getElementsByClassName("recoimage");
@@ -243,7 +243,7 @@
 
                 
             };
-
+            data.imp();
 
         });
 
