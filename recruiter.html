@@ -18,10 +18,11 @@ if (moeData?.SOFT_ASK_STATUS){
 var softAskStatus = moeData.SOFT_ASK_STATUS
 console.log(softAskStatus);
 if (softAskStatus === null || softAskStatus === undefined ){
- Moengage.call_web_push({
-    "soft_ask":true,
-	  "main_class": "moe-main-class",
-  "block_class": "moe-block-class"
+	Moengage.call_web_push({
+		"soft_ask":true,
+		"main_class": "moe-main-class",
+		 "allow_class":"",
+		"block_class": "moe-block-class"
 });
 }else{console.log('THis is stupidity')}
 }else{
