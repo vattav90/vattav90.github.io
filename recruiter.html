@@ -15,8 +15,9 @@ moeData = JSON.parse(moeData)
 console.log(moeData);
 
 if ('softAskStatus' in moeData){
-var softAskStatus = moeData.SOFT_ASK_STATUS // it can be one of these: shown, allowed, dismissed
-if (softAskStatus != "shown" && softAskStatus != "allowed" && softAskStatus != "dismissed" ){
+var softAskStatus = moeData.SOFT_ASK_STATUS
+console.log(softAskStatus);
+if (softAskStatus === null || softAskStatus === undefined ){
  Moengage.call_web_push({
     "soft_ask":true,
 	  "main_class": "moe-main-class",
