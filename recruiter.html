@@ -14,7 +14,7 @@ var moeData = localStorage.getItem('MOE_DATA')
 moeData = JSON.parse(moeData)
 console.log(moeData);
 
-if ('softAskStatus' in moeData){
+if ('SOFT_ASK_STATUS' in moeData){
 var softAskStatus = moeData.SOFT_ASK_STATUS
 console.log(softAskStatus);
 if (softAskStatus === null || softAskStatus === undefined ){
