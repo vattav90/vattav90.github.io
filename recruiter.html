@@ -14,11 +14,11 @@ var moeData = localStorage.getItem('MOE_DATA')
 moeData = JSON.parse(moeData)
 console.log(moeData);
 var softAskStatus = moeData.OPT_IN_SHOWN_TIME // it can be one of these: shown, allowed, dismissed
-if (softAskStatus != "shown"){
+
  Moengage.call_web_push({
     "soft_ask":true
 });
-}
+
   </script>
 	</head>
 
