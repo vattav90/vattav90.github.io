@@ -14,7 +14,15 @@ var moeData = localStorage.getItem('MOE_DATA')
 moeData = JSON.parse(moeData)
 console.log(moeData);
 var softAskStatus = moeData.SOFT_ASK_STATUS // it can be one of these: shown, allowed, dismissed
+if ('softAskStatus' in moeData){
 if (!softAskStatus){
+ Moengage.call_web_push({
+    "soft_ask":true,
+	  "main_class": "moe-main-class",
+  "block_class": "moe-block-class"
+});
+}
+}else{
  Moengage.call_web_push({
     "soft_ask":true,
 	  "main_class": "moe-main-class",
