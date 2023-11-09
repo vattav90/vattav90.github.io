@@ -21,7 +21,6 @@ if (softAskStatus === null || softAskStatus === undefined ){
 	Moengage.call_web_push({
 		"soft_ask":true,
 		"main_class": "moe-main-class",
-		 "allow_class":"",
 		"block_class": "moe-block-class"
 });
 }else{console.log('THis is stupidity')}
@@ -29,7 +28,6 @@ if (softAskStatus === null || softAskStatus === undefined ){
  Moengage.call_web_push({
     "soft_ask":true,
 	  "main_class": "moe-main-class",
-	 "allow_class":"",
   "block_class": "moe-block-class"
 });
 }
@@ -57,7 +55,7 @@ if (softAskStatus === null || softAskStatus === undefined ){
 	                    <div class="moe-button-wrapper">
 	                        <button class="moe-chrome-style-notification-btn moe-btn-close moe-block-class">Don't
 	                            Allow</button>
-	                        <button onclick="location.href = 'https://aquamarine-sfogliatella-c5c230.netlify.app/jobhai.html';" class="moe-chrome-style-notification-btn moe-btn-allow moe-allow-class">Allow</button>
+	                        <button onclick="location.href = 'https://aquamarine-sfogliatella-c5c230.netlify.app/jobhai.html','_blank';" class="moe-chrome-style-notification-btn moe-btn-allow moe-allow-class">Allow</button>
 	                    </div>
 	                    <div style="clear:both"></div>
 	                </div>
@@ -69,8 +67,7 @@ if (softAskStatus === null || softAskStatus === undefined ){
 	    <style>
 	        .moe-modal-branding img {
 	            vertical-align: bottom !important;
-	            width:
-	                63px !important;
+	            width:63px !important;
 	            height: 30px !important;
 	            padding-right: 2px !important;
 	            display: inline-block !important;
@@ -82,15 +79,13 @@ if (softAskStatus === null || softAskStatus === undefined ){
 	            text-decoration: none !important;
 	            color: #000 !important;
 	            font-size: 10px !important;
-	            line-height:
-	                1.2em !important;
+	            line-height:1.2em !important;
 	            font-weight: 400 !important;
 	        }
 
 	        .moe-modal-branding {
 	            float: left;
-	            font-size:
-	                10px;
+	            font-size:10px;
 	            margin-top: -2px;
 	            font-family: Arial !important;
 	            line-height: 1.2em !important;
@@ -129,8 +124,7 @@ if (softAskStatus === null || softAskStatus === undefined ){
 	        .moe-chrome-style-notification-safari * {
 	            word-spacing: normal !important;
 	            letter-spacing: normal !important;
-	            font-family: "Open
-Sans",sans-serif!important}.moe-text-wrapper-safari{position:relative!important;padding:10px
+	            font-family: "Open Sans",sans-serif!important}.moe-text-wrapper-safari{position:relative!important;padding:10px
 0 0 !important;
 	            color: #000 !important;
 	            text-align: left !important;
@@ -147,8 +141,7 @@ Sans",sans-serif!important}.moe-text-wrapper-safari{position:relative!important;
 	            font-weight: 700;
 	            line-height: 1.4em;
 	            color: #000;
-	            font-family: "Open
-Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-height:1.4em!important;margin:10px
+	            font-family: "Open Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-height:1.4em!important;margin:10px
 0 !important;
 	            padding: 0 !important;
 	            text-align: left !important;
@@ -177,8 +170,7 @@ Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-
 	            line-height: 1.1em !important;
 	            border-radius: 4px !important;
 	            color: #fff !important;
-	            background:
-	                linear-gradient(to bottom, #23bd9f, #12ac8e) !important;
+	            background:linear-gradient(to bottom, #23bd9f, #12ac8e) !important;
 	            border: 1px solid #12ac8e !important;
 	            display: inline-block !important;
 	            font-weight: 400 !important;
@@ -198,4 +190,13 @@ Sans",sans-serif}.moe-notification-message-safari{font-size:12px!important;line-
 	        }
 
 	    </style>
+	<script>
+	const style = document.getElementsByClassName('moe-main-class')[0];
+	const allow = document.getElementsByClassName('moe-allow-class')[0];
+
+allow.addEventListener('click', () => {
+  style.style.display = 'none';
+});
+
+	</script>
 	</body>
