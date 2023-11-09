@@ -9,7 +9,9 @@
   debug_logs: 0,
     cluster: "DC_1"
   });
-
+	
+var moeData = localStorage.getItem('MOE_DATA')
+moeData = JSON.parse(moeData)
 var softAskStatus = moeData.OPT_IN_SHOWN_TIME // it can be one of these: shown, allowed, dismissed
 if (softAskStatus != "shown"){
  Moengage.call_web_push({
